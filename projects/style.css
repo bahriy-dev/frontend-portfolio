@@ -1,0 +1,256 @@
+:root {
+  --bg: #0f172a;
+  --panel: #111827;
+  --muted: #cbd5e1;
+  --text: #e2e8f0;
+  --accent: #38bdf8;
+  --accent-strong: #0ea5e9;
+  --shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  --radius: 18px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.08), transparent 35%),
+    radial-gradient(circle at 80% 0%, rgba(14, 165, 233, 0.12), transparent 35%),
+    var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--accent);
+}
+
+.container {
+  width: min(1100px, 90vw);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(12px);
+  background: rgba(15, 23, 42, 0.7);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  z-index: 10;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.logo {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.nav {
+  display: none;
+  gap: 1.25rem;
+}
+
+.hero {
+  padding: 4rem 0 3rem;
+}
+
+.hero-content {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin: 0 0 0.75rem;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0 0 0.75rem;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(2rem, 4vw + 1rem, 3.25rem);
+}
+
+.lede {
+  max-width: 36rem;
+  color: #cbd5e1;
+  margin-bottom: 1.5rem;
+}
+
+.actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.2rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  transform: translateY(-1px);
+}
+
+.btn.primary {
+  background: linear-gradient(120deg, var(--accent), var(--accent-strong));
+  color: #0b1726;
+  box-shadow: var(--shadow);
+  border: none;
+}
+
+.btn.ghost {
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+}
+
+.hero-card {
+  position: relative;
+  display: grid;
+  gap: 0.75rem;
+  justify-items: end;
+}
+
+.hero-pill {
+  background: rgba(56, 189, 248, 0.12);
+  color: var(--accent);
+  padding: 0.65rem 1.1rem;
+  border-radius: 999px;
+  font-weight: 600;
+  border: 1px solid rgba(56, 189, 248, 0.35);
+}
+
+.hero-panel {
+  background: var(--panel);
+  padding: 1.25rem;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: var(--shadow);
+  min-width: 240px;
+}
+
+.hero-panel .stat {
+  margin-top: 0.75rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.hero-panel .number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.hero-panel .label {
+  color: var(--muted);
+}
+
+.features {
+  padding: 3.5rem 0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.section-desc {
+  margin: 0 auto;
+  max-width: 36rem;
+  color: var(--muted);
+}
+
+.feature-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.feature-card {
+  padding: 1.25rem;
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.feature-card .icon {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: rgba(56, 189, 248, 0.12);
+  color: var(--accent);
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+}
+
+.feature-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.site-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  padding: 2rem 0;
+  background: rgba(10, 13, 23, 0.75);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1rem;
+}
+
+@media (min-width: 720px) {
+  .nav {
+    display: flex;
+  }
+
+  .hero-content {
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+  }
+
+  .feature-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
